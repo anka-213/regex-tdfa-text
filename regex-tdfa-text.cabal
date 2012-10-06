@@ -1,6 +1,6 @@
 name:                regex-tdfa-text
 Cabal-Version:       >= 1.6
-version:             1.0
+version:             1.0.0.1
 synopsis:            Text interface for regex-tdfa
 description:         This provides text interface for regex-tdfa.
                      .
