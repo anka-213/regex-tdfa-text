@@ -1,8 +1,7 @@
 {-| 
 This modules provides 'RegexMaker' and 'RegexLike' instances for using
-'Text' with the DFA backend ("Text.Regex.Lib.WrapDFAEngine" and
-"Text.Regex.Lazy.DFAEngineFPS").  This module is usually used via
-import "Text.Regex.TDFA".
+'Text' with the DFA backend ("Text.Regex.TDFA.NewDFA.Engine" and
+"Text.Regex.TDFA.NewDFA.Tester"). 
 
 This exports instances of the high level API and the medium level
 API of 'compile','execute', and 'regexec'.
