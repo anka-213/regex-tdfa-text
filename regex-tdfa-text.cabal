@@ -12,7 +12,6 @@ license:             BSD3
 license-file:        LICENSE
 author:              Chris Kuklewicz 2007-2009, shelarcy 2012
 maintainer:          shelarcy <shelarcy@gmail.com>
-build-depends:       base
 build-type:          Simple
 
 source-repository head
