@@ -1,4 +1,12 @@
 {-| 
+Module      :  Text.Regex.TDFA.Text.Lazy
+Copyright   :  Chris Kuklewicz 2007-2009, shelarcy 2012
+License     :  BSD-style (see the file LICENSE)
+
+Maintainer  :  shelarcy <shelarcy@gmail.com>
+Stability   :  experimental
+Portability :  GHC (uses text)
+
 This modules provides 'RegexMaker' and 'RegexLike' instances for using
 'Text' with the DFA backend ("Text.Regex.TDFA.NewDFA.Engine" and
 "Text.Regex.TDFA.NewDFA.Tester"). 
