@@ -68,12 +68,12 @@ instance RegexLike Regex T.Text where
   matchTest = myMatchTest
   matchOnceText regex source = 
     fmap (\ma -> let (o,l) = ma!0
-                 in (T.take o source
-                    ,fmap (\ol@(off,len) -> (T.take len (T.drop off source),ol)) ma
-                    ,T.drop (o+l) source))
+                 in (before o source
+                    ,fmap (\ol -> (extract ol source,ol)) ma
+                    ,after (o+l) source))
          (matchOnce regex source)
   matchAllText regex source =
-    map (fmap (\ol@(off,len) -> (T.take len (T.drop off source),ol)))
+    map (fmap (\ol -> (extract ol source,ol)))
         (matchAll regex source)
 
 compile :: CompOption -- ^ Flags (summed together)
