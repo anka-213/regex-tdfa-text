@@ -8,7 +8,7 @@ Stability   :  experimental
 Portability :  GHC (uses text)
 
 This modules provides 'RegexMaker' and 'RegexLike' instances for using
-'Text' with the DFA backend ("Text.Regex.TDFA.NewDFA.Engine" and
+'Text' with the TDFA backend ("Text.Regex.TDFA.NewDFA.Engine" and
 "Text.Regex.TDFA.NewDFA.Tester"). 
 
 This exports instances of the high level API and the medium level
