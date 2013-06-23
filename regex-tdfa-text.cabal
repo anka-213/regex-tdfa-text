@@ -10,7 +10,7 @@ description:         This provides text interface for regex-tdfa.
 category:            Text
 license:             BSD3
 license-file:        LICENSE
-author:              Chris Kuklewicz 2007-2009, shelarcy 2012
+author:              Chris Kuklewicz 2007-2009, shelarcy 2012-2013
 maintainer:          shelarcy <shelarcy@gmail.com>
 build-type:          Simple
 

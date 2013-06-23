@@ -1,6 +1,6 @@
 {-| 
 Module      :  Text.Regex.TDFA.Text
-Copyright   :  Chris Kuklewicz 2007-2009, shelarcy 2012
+Copyright   :  Chris Kuklewicz 2007-2009, shelarcy 2012-2013
 License     :  BSD-style (see the file LICENSE)
 
 Maintainer  :  shelarcy <shelarcy@gmail.com>
