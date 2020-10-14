@@ -1,4 +1,5 @@
-{-| 
+{-# LANGUAGE FlexibleContexts #-}
+{-|
 Module      :  Text.Regex.TDFA.Text.Lazy
 Copyright   :  Chris Kuklewicz 2007-2009, shelarcy 2012-2013
 License     :  BSD-style (see the file LICENSE)
@@ -9,7 +10,7 @@ Portability :  GHC (uses text)
 
 This modules provides 'RegexMaker' and 'RegexLike' instances for using
 'Text' with the TDFA backend ("Text.Regex.TDFA.NewDFA.Engine" and
-"Text.Regex.TDFA.NewDFA.Tester"). 
+"Text.Regex.TDFA.NewDFA.Tester").
 
 This exports instances of the high level API and the medium level
 API of 'compile','execute', and 'regexec'.
@@ -23,8 +24,8 @@ module Text.Regex.TDFA.Text.Lazy(
  ,regexec
  ) where
 
-import Data.Array.IArray((!),elems,amap)
-import qualified Data.Text.Lazy as L(Text,empty,take,drop,uncons,unpack)
+import Data.Array.IArray((!),elems)
+import qualified Data.Text.Lazy as L(Text,unpack)
 
 import Text.Regex.Base(MatchArray,RegexContext(..),Extract(..),RegexMaker(..),RegexLike(..))
 import Text.Regex.Base.Impl(polymatch,polymatchM)
@@ -34,20 +35,14 @@ import Text.Regex.TDFA.TDFA(patternToRegex)
 import Text.Regex.TDFA.Common(Regex(..),CompOption,ExecOption(captureGroups),Position)
 
 import Data.Maybe(listToMaybe)
-import Text.Regex.TDFA.NewDFA.Uncons(Uncons(uncons))
+import Text.Regex.TDFA.NewDFA.Uncons(Uncons)
 import qualified Text.Regex.TDFA.NewDFA.Engine as Engine(execMatch)
 import qualified Text.Regex.TDFA.NewDFA.Tester as Tester(matchTest)
-
-instance Extract L.Text where
-  before = L.take . toEnum; after = L.drop . toEnum; empty = L.empty
 
 instance RegexContext Regex L.Text L.Text where
   match = polymatch
   matchM = polymatchM
 
-instance Uncons L.Text where
-  {- INLINE uncons #-}
-  uncons = L.uncons
 
 instance RegexMaker Regex CompOption ExecOption L.Text where
   makeRegexOptsM c e source = makeRegexOptsM c e (L.unpack source)
